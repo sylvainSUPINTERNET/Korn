@@ -61,8 +61,9 @@ app.use('*', function(req,res,next){
     next();
 });
 
+
+
 //test
-//TODO header authorization JWT bearer
 let middleware_auth_check = require('./middlewares/auth/auth_checker');
 app.get('/test',middleware_auth_check,function(req,res){
     res.send("test")
@@ -71,8 +72,6 @@ app.get('/test',middleware_auth_check,function(req,res){
 
 //Routes
 const auth_router = require('./routes/auth.router');
-
-
 app.use('/auth',auth_router);
 
 
